@@ -1,24 +1,2 @@
-datafunctions   const WEATHER_API_KEY='3694a2ff055d3bc2bb5c6b0e3b494ed5';
 
 
-http://api.weatherapi.com 
-key=e45c88bd23164dd595e40848231512
-
-http://api.weatherapi.com/v1/current.json?
-key=e45c88bd23164dd595e40848231512
-&q=new york
-&aqi=no
-
-http://api.weatherapi.com/v1/current.json?key=e45c88bd23164dd595e40848231512&qq=new%20york&aqi=no
-
-
-http://api.openweathermap.org/data/2.5/weather
-?lat=44.34
-&lon=10.99
-&appid={bf65afda7c96f300d8e12dfac9c85e87}
-
-https://api.openweathermap.org/data/2.5/weather
-?${flag}=${entryText}
-&units=${units}
-&appid=${WEATHER_API_KEY}
-3.0 key= 3694a2ff055d3bc2bb5c6b0e3b494ed5
