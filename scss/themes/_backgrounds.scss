@@ -1,24 +1,24 @@
-.rain{
+.rain {
     background-color: $background-color;
     background-image: url("../img/rain.jpg");
-}
-
-.snow{
+  }
+  
+  .snow {
     background-color: $background-color;
-    background-image: url(../snow.jpg);
-}
-
-.night{
+    background-image: url("../img/snow.jpg");
+  }
+  
+  .night {
     background-color: $night-color;
-    background-image: url(../night.jpg);
-}
-
-.fog{
+    background-image: url("../img/night.jpg");
+  }
+  
+  .fog {
     background-color: $fog-color;
-    background-image: url(../fog.jpg);
-}
-
-.clouds{
+    background-image: url("../img/fog.jpg");
+  }
+  
+  .clouds {
     background-color: $background-color;
-    background-image: url(../clouds.jpg);
-}
+    background-image: url("../img/clouds.jpg");
+  }
