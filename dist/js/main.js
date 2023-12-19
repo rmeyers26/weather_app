@@ -54,15 +54,14 @@ const getGeoWeather = (event) => {
 
 
 
-const loadWeather = (event)=>{
-  const savedLocation=getHomeLocation();
-    /* console.log(savedLocation,event); */
-  if (!savedLocation && !event) return getGeoWeather();
-  if (!savedLocation && event.type ==="click") {
-    displayError(
-      "No Home Location Saved",
-      "Sorry . Please save your home location first"
-    );
+  const loadWeather = (event) => {
+    const savedLocation = getHomeLocation();
+    if (!savedLocation && !event) return getGeoWeather();
+    if (!savedLocation && event.type === "click") {
+      displayError(
+        "No Home Location Saved.",
+        "Sorry. Please save your home location first."
+      );
   } else if (savedLocation && !event){
     displayHomeLocationWeather(savedLocation);
   } else {
