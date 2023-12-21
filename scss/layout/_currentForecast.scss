@@ -80,7 +80,7 @@
       .desc {
         @include flexCenter;
         grid-row: 4 / span 1;
-        grid-column: 1 / span 4;
+        grid-column: 1 / span 1;
         padding-top: 0.5rem;
         @include mqMaxWMinH(1024px, 650px) {
           margin-top: 1.5rem;
@@ -93,7 +93,23 @@
       .feels {
         @include flexCenter;
         grid-row: 5 / span 1;
-        grid-column: 1 / span 4;
+        grid-column: 1 / span 1;
+        padding-top: 0.5rem;
+        font-weight: normal;
+      }
+
+      .sunRise {
+        @include flexCenter;
+        grid-row: 4 / span 1;
+        grid-column: 3 / span 1;
+        padding-top: 0.5rem;
+        font-weight: normal;
+      }
+
+      .sunSet {
+        @include flexCenter;
+        grid-row: 5 / span 1;
+        grid-column: 3 / span 1;
         padding-top: 0.5rem;
         font-weight: normal;
       }
@@ -101,7 +117,7 @@
       .humidity {
         display: none;
         grid-row: 6 / span 1;
-        grid-column: 1 / span 4;
+        grid-column: 1 / span 1;
         padding-top: 0.5rem;
         font-weight: normal;
         color: $fadecolor;
@@ -116,7 +132,7 @@
       .wind {
         display: none;
         grid-row: 7 / span 1;
-        grid-column: 1 / span 4;
+        grid-column: 1 / span 1;
         padding-top: 0.5rem;
         font-weight: normal;
         color: $fadecolor;

@@ -22,6 +22,9 @@ export const getWeatherFromCoords = async (locationObj) => {
   try {
     const weatherStream = await fetch(url);
     const weatherJson = await weatherStream.json();
+    console.log(weatherStream);
+    console.log(weatherJson);
+    console.log("SR",weatherJson.current.sunrise,weatherJson.timezone_offset);
     return weatherJson;
   } catch (err) {
     console.error(err);
@@ -48,6 +51,7 @@ export const getWeatherFromCoords = async (locationObj) => {
 export const getCoordsFromApi = async (entryText, units) => {
   const regex = /^\d+$/g;
   const flag = regex.test(entryText) ? "zip" : "q";
+  console.log("flag",flag);
   const url = `https://api.openweathermap.org/data/2.5/weather?${flag}=${entryText}&units=${units}&appid=${WEATHER_API_KEY}`;
   const encodedUrl = encodeURI(url);
   try {

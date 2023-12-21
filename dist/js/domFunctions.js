@@ -76,6 +76,7 @@ export const updateDisplay = (weatherJson, locationObj) => {
     weatherJson,
     locationObj.getUnit()
   );
+  console.log(ccArray);
   displayCurrentConditions(ccArray);
   displaySixDayForecast(weatherJson);
   setFocusOnSearch();
@@ -169,6 +170,17 @@ const createCurrentConditionsDivs = (weatherObj, unit) => {
     "feels",
     `Feels Like ${Math.round(Number(weatherObj.current.feels_like))}°`
   );
+  const sunRise = createElem(
+    "div",
+    "sunRise",
+    `Sunrise ${new Date(weatherObj.current.sunrise*1000).toLocaleTimeString([],{hour: '2-digit', minute:'2-digit'})}`
+  );
+
+  const sunSet = createElem(
+    "div",
+    "sunSet",
+    `Sunset ${new Date(weatherObj.current.sunset*1000).toLocaleTimeString([],{hour: '2-digit', minute:'2-digit'})}`
+  );
   const maxTemp = createElem(
     "div",
     "maxtemp",
@@ -189,7 +201,7 @@ const createCurrentConditionsDivs = (weatherObj, unit) => {
     "wind",
     `Wind ${Math.round(Number(weatherObj.current.wind_speed))} ${windUnit}`
   );
-  return [icon, temp, desc, feels, maxTemp, minTemp, humidity, wind];
+  return [icon, temp, desc, feels,sunRise,sunSet, maxTemp, minTemp, humidity, wind];
 };
 
 const createMainImgDiv = (icon, altText) => {
@@ -272,15 +284,16 @@ const displayCurrentConditions = (currentConditionsArray) => {
   currentConditionsArray.forEach((cc) => {
     ccContainer.appendChild(cc);
   });
+  console.log("currentConditionsArray", currentConditionsArray);
 };
 
 const displaySixDayForecast = (weatherJson) => {
   for (let i = 1; i <= 6; i++) {
     const dfArray = createDailyForecastDivs(weatherJson.daily[i]);
+    console.log(i,dfArray);
     displayDailyForecast(dfArray);
   }
 };
-
 const createDailyForecastDivs = (dayWeather) => {
   const dayAbbreviationText = getDayAbbreviation(dayWeather.dt);
   const dayAbbreviation = createElem(
@@ -321,7 +334,6 @@ const createDailyForecastIcon = (icon, altText) => {
   img.alt = altText;
   return img;
 };
-
 const displayDailyForecast = (dfArray) => {
   const dayDiv = createElem("div", "forecastDay");
   dfArray.forEach((el) => {
